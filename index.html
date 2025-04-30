@@ -1,1 +1,34 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Endless Doors</title>
+  <style>
+    body { font-family: sans-serif; background: #222; color: #fff; text-align: center; }
+    #game { margin-top: 20px; }
+    .door { display: inline-block; margin: 10px; padding: 40px; background: #555; cursor: pointer; border-radius: 10px; }
+    .key, .flower, .monster, .score { margin: 10px; }
+    #leaderboard { margin-top: 20px; color: #ddd; }
+    input { padding: 5px; border-radius: 5px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Endless Doors</h1>
+  <input type="text" id="nickname" placeholder="Введите никнейм" />
+  <div id="stats">
+    <div class="key">Ключи: <span id="keys">3</span></div>
+    <div class="flower">Цветки: <span id="flowers">0</span></div>
+    <div class="score">Дверей открыто: <span id="score">0</span></div>
+  </div>
+  <div id="game">
+    <div class="door" onclick="openDoor(0)">Дверь 1</div>
+    <div class="door" onclick="openDoor(1)">Дверь 2</div>
+    <div class="door" onclick="openDoor(2)">Дверь 3</div>
+  </div>
+  <button onclick="restartGame()">Рестарт</button>
+  <div id="leaderboard"><h2>Таблица лидеров</h2><ul id="scoresList"></ul></div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
